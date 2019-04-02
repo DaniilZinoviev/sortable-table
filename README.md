@@ -1,2 +1,2 @@
 # Sortie
-Sort list of different types of toys
+Sort list for different types of something
