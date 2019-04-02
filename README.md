@@ -1,2 +1,2 @@
 # Sortie
-Sort list for different types of something
+Sort list for different types of something!
