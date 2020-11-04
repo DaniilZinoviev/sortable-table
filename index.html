@@ -1,68 +1,96 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Sort list</title>
+  </head>
 
-  <link rel="stylesheet" href="./css/main.css">
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 mx-auto">
+          <table class="table">
+            <caption>
+              <h3>Contacts</h3>
+            </caption>
+            <thead>
+              <th data-type="string" class="noselect">Name</th>
+              <th data-type="number" class="noselect">Age</th>
+              <th data-type="string" class="noselect">City</th>
+              <th data-type="string" class="noselect">Country</th>
+              <th data-type="bool" class="noselect">Is alive</th>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sun Tzu</td>
+                <td>54</td>
+                <td>Zhao</td>
+                <td>China</td>
+                <td class="is-alive-false">&#10008;</td>
+              </tr>
+              <tr>
+                <td>John Brimmer</td>
+                <td>63</td>
+                <td>Lancaster</td>
+                <td>Ireland</td>
+                <td class="is-alive-true">&#10004;</td>
+              </tr>
+              <tr>
+                <td>Vasya Pupkin</td>
+                <td>26</td>
+                <td>Omsk</td>
+                <td>Russia</td>
+                <td class="is-alive-true">&#10004;</td>
+              </tr>
+              <tr>
+                <td>Haile Selassie</td>
+                <td>44</td>
+                <td>Ejersa Goro</td>
+                <td>Ethiopia</td>
+                <td class="is-alive-false">&#10008;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
 
-  <title>Sort list</title>
-</head>
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="form">
+            <label
+              >Name: <input type="text" name="name" placeholder="Name" /></label
+            ><br />
+            <label
+              >Age: <input type="text" name="age" placeholder="Age" /></label
+            ><br />
+            <label
+              >City: <input type="text" name="city" placeholder="City" /></label
+            ><br />
+            <label
+              >Country:
+              <input type="text" name="country" placeholder="Country" /></label
+            ><br />
+            <label
+              >Is alive?<input type="checkbox" name="isAliveCheckbox" /></label
+            ><br />
+            <button class="add-contact">Add new contact</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-<body>
-  <table class="table">
-    <caption><h3>Contacts</h3></caption>
-    <thead>
-      <th data-type="string" class="noselect">Name</th>
-      <th data-type="number" class="noselect">Age</th>
-      <th data-type="string" class="noselect">City</th>
-      <th data-type="string" class="noselect">Country</th>
-      <th data-type="bool" class="noselect">Is alive</th>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Sun Tzu</td>
-        <td>54</td>
-        <td>Zhao</td>
-        <td>China</td>
-        <td class="is-alive-false">&#10008;</td>
-      </tr>
-      <tr>
-        <td>John Brimmer</td>
-        <td>63</td>
-        <td>Lancaster</td>
-        <td>Ireland</td>
-        <td class="is-alive-true">&#10004;</td>
-      </tr>
-      <tr>
-        <td>Vasya Pupkin</td>
-        <td>26</td>
-        <td>Omsk</td>
-        <td>Russia</td>
-        <td class="is-alive-true">&#10004;</td>
-      </tr>
-      <tr>
-        <td>Haile Selassie</td>
-        <td>44</td>
-        <td>Ejersa Goro</td>
-        <td>Ethiopia</td>
-        <td class="is-alive-false">&#10008;</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="form">
-    <label>Name: <input type="text" name="name" placeholder="Name"></label><br>
-    <label>Age: <input type="text" name="age" placeholder="Age"></label><br>
-    <label>City: <input type="text" name="city" placeholder="City"></label><br>
-    <label>Country: <input type="text" name="country" placeholder="Country"></label><br>
-    <label>Is alive?<input type="checkbox" name="isAliveCheckbox"></label><br>
-    <button class="add-contact">Add new contact</button>
-  </div>
-
-  <script src="./js/main.js" defer></script>
-</body>
-
+    <script src="./js/main.js" defer></script>
+  </body>
 </html>
