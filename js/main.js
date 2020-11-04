@@ -8,6 +8,57 @@
     }
   };
 
+  // "Add new Contact" button
+  const button = document.getElementsByClassName("add-contact")[0];
+
+  button.onclick = function () {
+    let name = document.getElementsByName("name")[0].value;
+    let age = document.getElementsByName("age")[0].value;
+    let city = document.getElementsByName("city")[0].value;
+    let country = document.getElementsByName("country")[0].value;
+    let isAlive = document.getElementsByName("isAliveCheckbox")[0];
+    const CHECK_MARK = "&#10004;";
+    const X_MARK = "&#10008;";
+
+    if (isAlive.checked) {
+      isAlive = CHECK_MARK;
+    } else {
+      isAlive = X_MARK;
+    }
+
+    // create array with user data
+    let userData = [name, age, city, country, isAlive];
+
+    let tr = document.createElement("tr");
+
+    for (let i = 0; i < 5; i++) {
+      let td = document.createElement("td");
+      if (userData[i] == isAlive) {
+        if (isAlive == CHECK_MARK) {
+          td.classList.add("is-alive-true");
+        } else {
+          td.classList.add("is-alive-false");
+        }
+      }
+      td.innerHTML = userData[i];
+      tr.appendChild(td);
+    }
+
+    // validation
+    !name
+      ? alert("Please, enter contact`s name")
+      : !age
+      ? alert("Please, enter contact`s age")
+      : !city
+      ? alert("Please, enter contact`s city")
+      : !country
+      ? alert("Please, enter contact`s country")
+      : tbody.appendChild(tr);
+
+    // refresh form
+    refresh("name", "age", "city", "country");
+  };
+
   function sortRows(cellIndex, type) {
     let rowsArray = [].slice.call(tbody.rows);
     let compare;
@@ -61,57 +112,6 @@
 
     table.appendChild(tbody);
   }
-
-  // "Add new Contact" button
-  const button = document.getElementsByClassName("add-contact")[0];
-
-  button.onclick = function () {
-    let name = document.getElementsByName("name")[0].value;
-    let age = document.getElementsByName("age")[0].value;
-    let city = document.getElementsByName("city")[0].value;
-    let country = document.getElementsByName("country")[0].value;
-    let isAlive = document.getElementsByName("isAliveCheckbox")[0];
-    const CHECK_MARK = "&#10004;";
-    const X_MARK = "&#10008;";
-
-    if (isAlive.checked) {
-      isAlive = CHECK_MARK;
-    } else {
-      isAlive = X_MARK;
-    }
-
-    // create array with user data
-    let userData = [name, age, city, country, isAlive];
-
-    let tr = document.createElement("tr");
-
-    for (let i = 0; i < 5; i++) {
-      let td = document.createElement("td");
-      if (userData[i] == isAlive) {
-        if (isAlive == CHECK_MARK) {
-          td.classList.add("is-alive-true");
-        } else {
-          td.classList.add("is-alive-false");
-        }
-      }
-      td.innerHTML = userData[i];
-      tr.appendChild(td);
-    }
-
-    // validation
-    !name
-      ? alert("Please, enter contact`s name")
-      : !age
-      ? alert("Please, enter contact`s age")
-      : !city
-      ? alert("Please, enter contact`s city")
-      : !country
-      ? alert("Please, enter contact`s country")
-      : tbody.appendChild(tr);
-
-    // refresh form
-    refresh("name", "age", "city", "country");
-  };
 
   function refresh() {
     for (let i = 0; i < arguments.length; i++) {
