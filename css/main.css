@@ -10,35 +10,4 @@ body main {
   user-select: none;
 }
 
-.table {
-  margin: 0 auto;
-}
-
-.table td,
-.table th {
-  text-align: center;
-  padding: 3px 15px;
-  border: 1px solid #ccc;
-}
-
-.table th {
-  font-size: 24px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.205);
-}
-
-.table th:hover {
-  background-color: rgba(0, 0, 0, 0.13);
-}
-
-.is-alive-false {
-  color: #7a2020;
-  font-size: 20px;
-}
-
-.is-alive-true {
-  color: #259e15;
-  font-size: 20px;
-}
-
 /*# sourceMappingURL=main.css.map */

@@ -1,8 +1,10 @@
-// Helpers
-@import 'helpers/mixins';
-@import 'helpers/variables';
-
-// Partials
-@import 'partials/base';
-@import 'partials/form';
-@import 'partials/table';
+body {
+  font-size: 18px;
+  min-height: 100vh;
+  main {
+    flex-grow: 1;
+  }
+}
+.noselect {
+  user-select: none;
+}
