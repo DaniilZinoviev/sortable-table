@@ -56,55 +56,56 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mb-5">
-            <table class="table shadow table-striped table-responsive-sm table-borderless table-hover">
+            <table class="table shadow table-striped table-responsive-sm table-borderless table-hover" id="sorting-table">
               <thead>
-                <th data-type="string" class="noselect">Name</th>
-                <th data-type="number" class="noselect">Age</th>
-                <th data-type="string" class="noselect">City</th>
-                <th data-type="string" class="noselect">Country</th>
-                <th data-type="bool" class="noselect">Is alive</th>
+                <th data-type="string">Name</th>
+                <th data-type="number">Age</th>
+                <th data-type="string">City</th>
+                <th data-type="string">Country</th>
+                <th data-type="bool">Is alive</th>
               </thead>
               <tbody>
                 <tr>
-                  <td data-title="Name">Sun Tzu</td>
-                  <td data-title="Age">54</td>
-                  <td data-title="City">Zhao</td>
-                  <td data-title="Country">China</td>
-                  <td data-title="Is alive" class="is-alive-false">&#10008;</td>
+                  <td>Sun Tzu</td>
+                  <td>54</td>
+                  <td>Zhao</td>
+                  <td>China</td>
+                  <td class="text-danger">&#10008;</td>
                 </tr>
                 <tr>
-                  <td data-title="Name">John Brimmer</td>
-                  <td data-title="Age">63</td>
-                  <td data-title="City">Lancaster</td>
-                  <td data-title="Country">Ireland</td>
-                  <td data-title="Is alive" class="is-alive-true">&#10004;</td>
+                  <td>John Brimmer</td>
+                  <td>63</td>
+                  <td>Lancaster</td>
+                  <td>Ireland</td>
+                  <td class="text-success">&#10004;</td>
                 </tr>
                 <tr>
-                  <td data-title="Name">Vasya Pupkin</td>
-                  <td data-title="Age">26</td>
-                  <td data-title="City">Omsk</td>
-                  <td data-title="Country">Russia</td>
-                  <td data-title="Is alive" class="is-alive-true">&#10004;</td>
+                  <td>Vasya Pupkin</td>
+                  <td>26</td>
+                  <td>Omsk</td>
+                  <td>Russia</td>
+                  <td class="text-success">&#10004;</td>
                 </tr>
                 <tr>
-                  <td data-title="Name">Haile Selassie</td>
-                  <td data-title="Age">44</td>
-                  <td data-title="City">Ejersa Goro</td>
-                  <td data-title="Country">Ethiopia</td>
-                  <td data-title="Is alive" class="is-alive-false">&#10008;</td>
+                  <td>Haile Selassie</td>
+                  <td>44</td>
+                  <td>Ejersa Goro</td>
+                  <td>Ethiopia</td>
+                  <td class="text-danger">&#10008;</td>
                 </tr>
               </tbody>
             </table>
           </div>
 
           <div class="col-lg-4">
-            <form class="px-lg-2">
+            <form class="px-lg-2" id="form--add-contact">
               <div class="form-group">
                 <!-- <label for="inputName">Name</label> -->
                 <input
                   class="form-control shadow-sm"
                   type="text"
                   name="name"
+                  id="name"
                   placeholder="Name"
                 />
               </div>
@@ -115,6 +116,7 @@
                   class="form-control shadow-sm"
                   type="text"
                   name="age"
+                  id="age"
                   placeholder="Age"
                 />
               </div>
@@ -125,6 +127,7 @@
                   class="form-control shadow-sm"
                   type="text"
                   name="city"
+                  id="city"
                   placeholder="City"
                 />
               </div>
@@ -135,18 +138,18 @@
                   class="form-control shadow-sm"
                   type="text"
                   name="country"
+                  id="country"
                   placeholder="Country"
                 />
               </div>
 
               <div class="form-group">
                 <input
-                  class=""
                   type="checkbox"
                   name="isAlive"
-                  id="inputIsAlive"
+                  id="isAlive"
                 />
-                <label for="inputIsAlive" class=""> Is a person alive? </label>
+                <label for="isAlive"> Is a person alive? </label>
               </div>
 
               <button class="btn btn-outline-primary shadow-sm" type="submit">
@@ -183,6 +186,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="./js/sortie.js" defer></script>
     <script src="./js/main.js" defer></script>
   </body>
 </html>
