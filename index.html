@@ -1,17 +1,37 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
+    <!-- Meta -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Sortable table | JS example</title>
-    <meta name="description" content="An example of sortable table, customly written.">
-    <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="128x128" href="./images/favicon-128x128.png" />
-    
+    <meta
+      name="description"
+      content="An example of sortable table, customly written."
+    />
 
-    <link rel="stylesheet" href="./css/main.css" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="./images/favicon-128x128.png"
+    />
+
+    <!-- Vendor -->
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
@@ -20,92 +40,149 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="./css/main.css" />
   </head>
 
-  <body>
-    
+  <body class="d-flex flex-column h-100 justify-content-start">
     <header class="py-2 mb-5 shadow-sm rounded border-bottom">
       <div class="container-fluid">
         <h1 class="text-dark">Sortable table</h1>
       </div>
     </header>
 
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <table class="table shadow">
-            <caption>
-              <h3>Contacts</h3>
-            </caption>
-            <thead>
-              <th data-type="string" class="noselect">Name</th>
-              <th data-type="number" class="noselect">Age</th>
-              <th data-type="string" class="noselect">City</th>
-              <th data-type="string" class="noselect">Country</th>
-              <th data-type="bool" class="noselect">Is alive</th>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Sun Tzu</td>
-                <td>54</td>
-                <td>Zhao</td>
-                <td>China</td>
-                <td class="is-alive-false">&#10008;</td>
-              </tr>
-              <tr>
-                <td>John Brimmer</td>
-                <td>63</td>
-                <td>Lancaster</td>
-                <td>Ireland</td>
-                <td class="is-alive-true">&#10004;</td>
-              </tr>
-              <tr>
-                <td>Vasya Pupkin</td>
-                <td>26</td>
-                <td>Omsk</td>
-                <td>Russia</td>
-                <td class="is-alive-true">&#10004;</td>
-              </tr>
-              <tr>
-                <td>Haile Selassie</td>
-                <td>44</td>
-                <td>Ejersa Goro</td>
-                <td>Ethiopia</td>
-                <td class="is-alive-false">&#10008;</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <main class="mb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <table class="table shadow">
+              <thead>
+                <th data-type="string" class="noselect">Name</th>
+                <th data-type="number" class="noselect">Age</th>
+                <th data-type="string" class="noselect">City</th>
+                <th data-type="string" class="noselect">Country</th>
+                <th data-type="bool" class="noselect">Is alive</th>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Sun Tzu</td>
+                  <td>54</td>
+                  <td>Zhao</td>
+                  <td>China</td>
+                  <td class="is-alive-false">&#10008;</td>
+                </tr>
+                <tr>
+                  <td>John Brimmer</td>
+                  <td>63</td>
+                  <td>Lancaster</td>
+                  <td>Ireland</td>
+                  <td class="is-alive-true">&#10004;</td>
+                </tr>
+                <tr>
+                  <td>Vasya Pupkin</td>
+                  <td>26</td>
+                  <td>Omsk</td>
+                  <td>Russia</td>
+                  <td class="is-alive-true">&#10004;</td>
+                </tr>
+                <tr>
+                  <td>Haile Selassie</td>
+                  <td>44</td>
+                  <td>Ejersa Goro</td>
+                  <td>Ethiopia</td>
+                  <td class="is-alive-false">&#10008;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-        <div class="col-md-4">
-          
-          <div class="form">
-            <label
-              >Name: <input type="text" name="name" placeholder="Name" /></label
-            ><br />
-            <label
-              >Age: <input type="text" name="age" placeholder="Age" /></label
-            ><br />
-            <label
-              >City: <input type="text" name="city" placeholder="City" /></label
-            ><br />
-            <label
-              >Country:
-              <input type="text" name="country" placeholder="Country" /></label
-            ><br />
-            <label
-              >Is alive?<input type="checkbox" name="isAliveCheckbox" /></label
-            ><br />
-            <button class="add-contact">Add new contact</button>
+          <div class="col-md-4">
+            <form class="px-2">
+              <div class="form-group">
+                <!-- <label for="inputName">Name</label> -->
+                <input
+                  class="form-control shadow-sm"
+                  type="text"
+                  name="name"
+                  placeholder="Name"
+                />
+              </div>
+
+              <div class="form-group">
+                <!-- <label for="inputAge">Age</label> -->
+                <input
+                  class="form-control shadow-sm"
+                  type="text"
+                  name="age"
+                  placeholder="Age"
+                />
+              </div>
+
+              <div class="form-group">
+                <!-- <label for="inputCity">City</label> -->
+                <input
+                  class="form-control shadow-sm"
+                  type="text"
+                  name="city"
+                  placeholder="City"
+                />
+              </div>
+
+              <div class="form-group">
+                <!-- <label for="inputCountry">Country</label> -->
+                <input
+                  class="form-control shadow-sm"
+                  type="text"
+                  name="country"
+                  placeholder="Country"
+                />
+              </div>
+
+              <div class="form-group">
+                <input
+                  class=""
+                  type="checkbox"
+                  name="isAlive"
+                  id="inputIsAlive"
+                />
+                <label for="inputIsAlive" class=""> Is a person alive? </label>
+              </div>
+
+              <button class="btn btn-outline-primary shadow-sm" type="submit">
+                Add new contact
+              </button>
+            </form>
           </div>
         </div>
       </div>
-    </div>
+    </main>
 
-    <footer>
-      Favicon made by <a href="https://www.flaticon.com/authors/vitaly-gorbachev" title="Vitaly Gorbachev">Vitaly Gorbachev</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+    <footer class="pt-5">
+      <div class="container-fluid">
+        <p class="text-dark">
+          Favicon made by
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.flaticon.com/authors/vitaly-gorbachev"
+            title="Vitaly Gorbachev"
+            >Vitaly Gorbachev</a
+          >
+          from
+          <a
+            target="_blank"
+            rel="noopener"
+            href="https://www.flaticon.com/"
+            title="Flaticon"
+          >
+            www.flaticon.com</a
+          >
+        </p>
+      </div>
     </footer>
 
+    <!-- Scripts -->
     <script src="./js/main.js" defer></script>
   </body>
 </html>
