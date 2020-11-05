@@ -18,10 +18,17 @@
   </head>
 
   <body>
+    
+    <header class="py-2 mb-5 shadow-sm rounded border-bottom">
+      <div class="container-fluid">
+        <h1 class="text-dark">Sortable table</h1>
+      </div>
+    </header>
+
     <div class="container">
       <div class="row">
-        <div class="col-md-8 mx-auto">
-          <table class="table">
+        <div class="col-md-8">
+          <table class="table shadow">
             <caption>
               <h3>Contacts</h3>
             </caption>
@@ -64,10 +71,9 @@
             </tbody>
           </table>
         </div>
-      </div>
 
-      <div class="row">
-        <div class="col-md-6 mx-auto">
+        <div class="col-md-4">
+          
           <div class="form">
             <label
               >Name: <input type="text" name="name" placeholder="Name" /></label
