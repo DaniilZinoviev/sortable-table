@@ -19,30 +19,37 @@ function SortingTable(table) {
 
   this.sortRows = function (cellIndex, type) {
     const originalRows = [].slice.call(this.tbody.rows);
+    const self = this;
     let compare;
-    switch (type) {
-      case "number":
-        compare = function (rowA, rowB) {
-          return (
-            rowA.cells[cellIndex].innerHTML - rowB.cells[cellIndex].innerHTML
-          );
-        };
-        break;
-      case "string":
-        compare = function (rowA, rowB) {
-          return rowA.cells[cellIndex].innerHTML.localeCompare(
-            rowB.cells[cellIndex].innerHTML
-          );
-        };
-        break;
-      case "bool":
-        compare = function (rowA, rowB) {
-          return rowA.cells[cellIndex].classList.contains(this.boolClass)
-            ? -1
-            : 1;
-        };
-      default:
-        console.error("[SortingTable] Unknown data-type " + type + ".");
+    try {
+      switch (type) {
+        case "number":
+          compare = function (rowA, rowB) {
+            return (
+              rowA.cells[cellIndex].innerHTML - rowB.cells[cellIndex].innerHTML
+            );
+          };
+          break;
+        case "string":
+          compare = function (rowA, rowB) {
+            return rowA.cells[cellIndex].innerHTML.localeCompare(
+              rowB.cells[cellIndex].innerHTML
+            );
+          };
+          break;
+        case "bool":
+          compare = function (rowA, rowB) {
+            return rowA.cells[cellIndex].classList.contains(self.boolClass)
+              ? -1
+              : 1;
+          };
+          break;
+        default:
+          throw new Error("[SortingTable] Unknown data-type " + type + ".");
+      }
+    } catch (e) {
+      console.error(e.message);
+      return;
     }
     const sortedRows = originalRows.slice();
     sortedRows.sort(compare);
