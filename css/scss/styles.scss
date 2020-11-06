@@ -10,6 +10,7 @@ body {
 }
 .table {
   th {
+    white-space: nowrap;
     cursor: pointer;
     &:after {
       content: '\f063';

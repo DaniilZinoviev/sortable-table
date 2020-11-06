@@ -12,6 +12,7 @@ body main {
 }
 
 .table th {
+  white-space: nowrap;
   cursor: pointer;
 }
 .table th:after {
