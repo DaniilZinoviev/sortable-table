@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   font-size: 18px;
   min-height: 100vh;
@@ -8,6 +9,34 @@ body main {
 
 .noselect {
   user-select: none;
+}
+
+.table th {
+  cursor: pointer;
+}
+.table th:after {
+  content: "";
+  font-family: fontAwesome;
+  visibility: hidden;
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+}
+.table th.order-desc:after {
+  content: "";
+}
+.table th.ordered {
+  position: relative;
+}
+.table th.ordered:after {
+  visibility: visible;
+}
+.table th:hover {
+  background-color: rgba(155, 155, 155, 0.075);
+}
+.table th:hover:not(.ordered):after {
+  visibility: visible;
+  opacity: 0.2;
 }
 
 /*# sourceMappingURL=main.css.map */

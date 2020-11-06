@@ -13,13 +13,28 @@ function SortingTable(table) {
 
   this.handleHeadClick = function (e) {
     if (e.target.cellIndex !== undefined) {
-      this.sortRows(e.target.cellIndex, e.target.getAttribute("data-type"));
+      const order = this.sortRows(
+        e.target.cellIndex,
+        e.target.getAttribute("data-type")
+      );
+      
+      if (order === 'asc') {
+        const th = this.thead.querySelectorAll('th');
+        [].forEach.call(th, function(item) {
+          item.classList.remove('ordered')
+          item.classList.remove('order-desc')
+        });
+        e.target.classList.add('ordered');
+      } else {
+        e.target.classList.toggle('order-desc')
+      }
     }
   };
 
   this.sortRows = function (cellIndex, type) {
     const originalRows = [].slice.call(this.tbody.rows);
     const self = this;
+    let orderSort = 'asc';
     let compare;
     try {
       switch (type) {
@@ -64,6 +79,7 @@ function SortingTable(table) {
       // table was sorted, so we should reverse an order on last row
       if (i === sortedRows.length - 1) {
         sortedRows.reverse();
+        orderSort = 'desc';
       }
     }
     // Replace old table body
@@ -72,6 +88,8 @@ function SortingTable(table) {
       this.tbody.appendChild(sortedRows[i]);
     }
     table.appendChild(this.tbody);
+
+    return orderSort;
   };
 
   this.createRow = function (data, callback) {

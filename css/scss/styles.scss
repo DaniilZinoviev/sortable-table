@@ -8,3 +8,38 @@ body {
 .noselect {
   user-select: none;
 }
+.table {
+  th {
+    cursor: pointer;
+    &:after {
+      content: '\f063';
+      font-family: fontAwesome;
+      visibility: hidden;
+      display: inline-block;
+      margin-left: 10px;
+      font-size: 14px;
+    }
+    &.order-desc {
+      &:after {
+        content: '\f062';
+      }
+    }
+    &.ordered {
+      position: relative;
+      &:after {
+        visibility: visible;
+      }
+    }
+
+    &:hover {
+      background-color: rgba(155, 155, 155, 0.075);
+      &:not(.ordered) {
+        &:after {
+          visibility: visible;
+          opacity: 0.2;
+        }
+      }
+    }
+    
+  }
+}
