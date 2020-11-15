@@ -9,4 +9,4 @@ There are for now 3 types:
  - Boolean ("bool")
  
  
-
+[Screenshot](https://i.imgur.com/6TX0jh8.png)
