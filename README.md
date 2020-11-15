@@ -1,5 +1,12 @@
-# Sortie
+# Sortable table
 
-Custom sort table
+There is an example of HTML table with implemented on JS sorting functionality.
 
-Sorting based on table columns and attribute of sorting type in the column header
+Sorting is based on an attribute the column header, that describe a type of sorting.
+There are for now 3 types:
+ - String ("string")
+ - Number ("number")
+ - Boolean ("bool")
+ 
+ 
+
