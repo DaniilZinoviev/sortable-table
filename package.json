@@ -1,0 +1,26 @@
+{
+  "name": "sortable-table",
+  "version": "1.0.0",
+  "description": "This is a one of realizations of table sorting.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack --serve --env MODE=development",
+    "build": "webpack --env MODE=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DaniilZinovyev/Sortie.git"
+  },
+  "keywords": [],
+  "author": "Daniil Zinoviev <danzino21@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DaniilZinovyev/Sortie/issues"
+  },
+  "homepage": "https://github.com/DaniilZinovyev/Sortie#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^4.5.0",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0"
+  }
+}
