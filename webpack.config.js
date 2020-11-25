@@ -18,6 +18,11 @@ module.exports = (env = {}) => {
           loader: 'babel-loader'
         }
       ]
+    },
+    devServer: {
+      open: true,
+      openPage: 'public/',
+      writeToDisk: true
     }
   }
 }
