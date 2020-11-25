@@ -5,11 +5,12 @@ module.exports = (env = {}) => {
   const isDev = mode === 'development';
 
   return {
-    entry: {
-      main: 'src/library.js'
+    mode: isProd ? 'production' : 'development',
+    entry: './src/library.js',
+    output: {
+      filename: 'sortingTable.js'
     },
-
-    modules: {
+    module: {
       rules: [
         {
           test: /\.jsx?/,

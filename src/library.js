@@ -1,17 +1,25 @@
 /**
  * Main function for sorting functionality
  *
- * @param {HTMLTableElement} table
+ * 
  *  A table to add sorting functionality to
  */
-function SortingTable(table) {
-  this.CHECK_MARK = "&#10004;";
-  this.X_MARK = "&#10008;";
-  this.boolClass = "text-success";
-  this.tbody = table.getElementsByTagName("tbody")[0];
-  this.thead = table.getElementsByTagName("thead")[0];
+class SortingTable {
+  CHECK_MARK = "&#10004;";
+  X_MARK = "&#10008;"
+  boolClass = "text-success"
 
-  this.handleHeadClick = function (e) {
+  /**
+   * @param {HTMLTableElement} table
+   */
+  constructor(table) {
+    this.table = table;
+    this.tbody = table.getElementsByTagName("tbody")[0];
+    this.thead = table.getElementsByTagName("thead")[0];
+    this.thead.addEventListener("click", this.handleHeadClick);
+  }
+
+  handleHeadClick = (e) => {
     if (e.target.cellIndex !== undefined) {
       const order = this.sortRows(
         e.target.cellIndex,
@@ -31,7 +39,7 @@ function SortingTable(table) {
     }
   };
 
-  this.sortRows = function (cellIndex, type) {
+  sortRows(cellIndex, type) {
     const originalRows = [].slice.call(this.tbody.rows);
     const self = this;
     let orderSort = 'asc';
@@ -83,16 +91,16 @@ function SortingTable(table) {
       }
     }
     // Replace old table body
-    table.removeChild(this.tbody);
+    this.table.removeChild(this.tbody);
     for (let i = 0; i < sortedRows.length; i++) {
       this.tbody.appendChild(sortedRows[i]);
     }
-    table.appendChild(this.tbody);
+    this.table.appendChild(this.tbody);
 
     return orderSort;
   };
 
-  this.createRow = function (data, callback) {
+  createRow(data, callback) {
     const tr = document.createElement("tr");
     for (let i = 0; i < data.length; i++) {
       const td = document.createElement("td");
@@ -105,5 +113,9 @@ function SortingTable(table) {
     this.tbody.appendChild(tr);
   };
 
-  this.thead.addEventListener("click", this.handleHeadClick.bind(this));
 }
+
+/**
+ * Export
+ */
+window.SortingTable = SortingTable;
